@@ -26,7 +26,7 @@ export function useAuthorizedFetch(apiPath, fetcher) {
     loading: true,
   });
 
-  const fetch = () => {
+  const fetch = useCallback(() => {
     if (!loggedIn) {
       return;
     }
@@ -48,14 +48,19 @@ export function useAuthorizedFetch(apiPath, fetcher) {
         loading: false,
       }));
     });
-  };
+  }, [apiPath, fetcher, loggedIn, userId]);
 
   useEffect(() => {
     fetch();
-  }, []);
+  }, [fetch]);
 
-  return {
-    result,
-    revalidate: fetch,
-  };
+  const res = useMemo(
+    () => ({
+      ...result,
+      revalidate: fetch,
+    }),
+    [fetch, result],
+  );
+
+  return res;
 }
