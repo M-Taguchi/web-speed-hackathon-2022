@@ -14,6 +14,7 @@ export const Routes = () => {
     <RouterRoutes>
       <Route element={<CommonLayout />} path="/">
         <Route index element={<Top />} />
+        <Route element={<Top />} path=":date" />
         <Route path="races/:raceId">
           <Route element={<RaceCard />} path="race-card" />
           <Route element={<Odds />} path="odds" />
