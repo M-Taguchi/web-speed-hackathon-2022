@@ -26,16 +26,10 @@ export function useAuthorizedFetch(apiPath, fetcher) {
     loading: true,
   });
 
-  const fetch = useCallback(() => {
+  const fetch = () => {
     if (!loggedIn) {
       return;
     }
-
-    setResult(() => ({
-      data: null,
-      error: null,
-      loading: true,
-    }));
 
     const promise = fetcher(apiPath, userId);
 
@@ -54,19 +48,14 @@ export function useAuthorizedFetch(apiPath, fetcher) {
         loading: false,
       }));
     });
-  }, [apiPath, fetcher, loggedIn, userId]);
+  };
 
   useEffect(() => {
     fetch();
-  }, [fetch]);
+  }, []);
 
-  const res = useMemo(
-    () => ({
-      ...result,
-      revalidate: fetch,
-    }),
-    [fetch, result],
-  );
-
-  return res;
+  return {
+    result,
+    revalidate: fetch,
+  };
 }

@@ -22,12 +22,6 @@ export function useFetch(apiPath, fetcher) {
   });
 
   useEffect(() => {
-    setResult(() => ({
-      data: null,
-      error: null,
-      loading: true,
-    }));
-
     const promise = fetcher(apiPath);
 
     promise.then((data) => {
@@ -45,7 +39,7 @@ export function useFetch(apiPath, fetcher) {
         loading: false,
       }));
     });
-  }, [apiPath, fetcher]);
+  }, []);
 
   return result;
 }

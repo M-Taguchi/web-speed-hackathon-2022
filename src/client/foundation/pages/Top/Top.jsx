@@ -101,17 +101,6 @@ function useHeroImage(todayRaces) {
 export const Top = () => {
   const { date = moment().format("YYYY-MM-DD") } = useParams();
 
-  const ChargeButton = styled.button`
-    background: ${Color.mono[700]};
-    border-radius: ${Radius.MEDIUM};
-    color: ${Color.mono[0]};
-    padding: ${Space * 1}px ${Space * 2}px;
-
-    &:hover {
-      background: ${Color.mono[800]};
-    }
-  `;
-
   const chargeDialogRef = useRef(null);
 
   const { data: userData, revalidate } = useAuthorizedFetch(
@@ -135,7 +124,7 @@ export const Top = () => {
 
   const todayRaces =
     raceData != null
-      ? [...raceData.races]
+      ? raceData.races
           .sort(
             (/** @type {Model.Race} */ a, /** @type {Model.Race} */ b) =>
               moment(a.startAt) - moment(b.startAt),
@@ -181,3 +170,14 @@ export const Top = () => {
     </Container>
   );
 };
+
+const ChargeButton = styled.button`
+  background: ${Color.mono[700]};
+  border-radius: ${Radius.MEDIUM};
+  color: ${Color.mono[0]};
+  padding: ${Space * 1}px ${Space * 2}px;
+
+  &:hover {
+    background: ${Color.mono[800]};
+  }
+`;
