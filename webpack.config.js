@@ -86,6 +86,9 @@ module.exports = [
                   {
                     modules: "cjs",
                     spec: true,
+                    targets: {
+                      node: true,
+                    },
                   },
                 ],
                 "@babel/preset-react",
