@@ -106,6 +106,16 @@ export const apiRoute = async (fastify) => {
 
     race.image = race.image.replace(".jpg", ".webp");
 
+    race.entries = race.entries.map((entry) => {
+      return {
+        ...entry,
+        player: {
+          ...entry.player,
+          image: entry.player.image.replace(".jpg", ".webp"),
+        },
+      };
+    });
+
     res.send(race);
   });
 
