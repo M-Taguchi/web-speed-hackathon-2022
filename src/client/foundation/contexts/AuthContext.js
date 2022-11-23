@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useCallback, useContext, useMemo, useState } from "react";
+import React, { useContext, useState } from "react";
 
 /**
  * @typedef AuthContextValues
@@ -33,24 +33,19 @@ export const AuthContextProvider = ({ children }) => {
 export const useAuth = () => {
   const { userId } = useContext(AuthContext);
 
-  const res = useMemo(
-    () => ({
-      loggedIn: userId != null,
-      userId,
-    }),
-    [userId],
-  );
-
-  return res;
+  return {
+    loggedIn: userId != null,
+    userId,
+  };
 };
 
 export const useRegister = () => {
   const { setUserId } = useContext(AuthContext);
 
-  const register = useCallback(async () => {
+  const register = async () => {
     const res = await axios.get("/api/users/me");
     setUserId(res.data.id);
-  }, [setUserId]);
+  };
 
   return register;
 };

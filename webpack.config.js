@@ -2,6 +2,7 @@
 const path = require("path");
 
 const CopyPlugin = require("copy-webpack-plugin");
+const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 
 function abs(...args) {
@@ -38,7 +39,7 @@ module.exports = [
                 [
                   "@babel/preset-env",
                   {
-                    modules: "cjs",
+                    modules: false,
                     spec: true,
                   },
                 ],
@@ -96,6 +97,7 @@ module.exports = [
       filename: "server.js",
       path: DIST_ROOT,
     },
+    plugins: [new MomentLocalesPlugin({ localesToKeep: ["ja"] })],
     resolve: {
       extensions: [".mjs", ".js", ".jsx"],
     },
