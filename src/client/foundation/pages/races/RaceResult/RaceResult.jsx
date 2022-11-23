@@ -85,3 +85,5 @@ export const RaceResult = () => {
     </Container>
   );
 };
+
+export default RaceResult;

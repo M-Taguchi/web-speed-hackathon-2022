@@ -182,3 +182,5 @@ const ChargeButton = styled.button`
     background: ${Color.mono[800]};
   }
 `;
+
+export default Top;

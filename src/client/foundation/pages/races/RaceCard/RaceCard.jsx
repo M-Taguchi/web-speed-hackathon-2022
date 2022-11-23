@@ -79,3 +79,5 @@ export const RaceCard = () => {
     </Container>
   );
 };
+
+export default RaceCard;

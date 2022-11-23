@@ -125,3 +125,5 @@ export const Odds = () => {
     </Container>
   );
 };
+
+export default Odds;
