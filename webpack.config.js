@@ -41,6 +41,9 @@ module.exports = [
                   {
                     modules: false,
                     spec: true,
+                    targets: {
+                      node: true,
+                    },
                   },
                 ],
                 "@babel/preset-react",
@@ -58,6 +61,7 @@ module.exports = [
       new CopyPlugin({
         patterns: [{ from: PUBLIC_ROOT, to: DIST_PUBLIC }],
       }),
+      new MomentLocalesPlugin({ localesToKeep: ["ja"] }),
     ],
     resolve: {
       extensions: [".js", ".jsx"],
@@ -97,7 +101,6 @@ module.exports = [
       filename: "server.js",
       path: DIST_ROOT,
     },
-    plugins: [new MomentLocalesPlugin({ localesToKeep: ["ja"] })],
     resolve: {
       extensions: [".mjs", ".js", ".jsx"],
     },
