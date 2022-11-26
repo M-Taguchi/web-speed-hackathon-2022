@@ -1,16 +1,21 @@
+import { styled } from "@compiled/react";
 import React from "react";
-import styled from "styled-components";
 
 import { FontSize, Space } from "../../../styles/variables";
 
-const styles = {
-  h1: `font-size: ${FontSize.XX_LARGE}`,
-  h2: `font-size: ${FontSize.X_LARGE}`,
-  h3: `font-size: ${FontSize.LARGE}`,
-};
+// const styles = {
+//   h1: `font-size: ${FontSize.XX_LARGE}`,
+//   h2: `font-size: ${FontSize.X_LARGE}`,
+//   h3: `font-size: ${FontSize.LARGE}`,
+// };
 
 const Wrapper = styled.h1`
-  ${({ as }) => styles[as]}
+  ${({ as }) =>
+    as === "h1"
+      ? `font-size: ${FontSize.XX_LARGE}`
+      : as === "h2"
+      ? `font-size: ${FontSize.X_LARGE}`
+      : `font-size: ${FontSize.LARGE}`}
   font-weight: bold;
   margin-bottom: ${Space * 1}px;
 `;

@@ -1,5 +1,5 @@
+import { styled } from "@compiled/react";
 import React from "react";
-import styled from "styled-components";
 
 import { Color, FontSize, Space } from "../../../../../styles/variables";
 
@@ -42,13 +42,13 @@ const Table = styled.table`
 `;
 
 const TableHCell = styled.th`
-  font-weight: ${({ $bold }) => $bold && "bold"};
-  text-align: ${({ $align }) => $align};
+  ${({ $bold }) => $bold && "font-weight: bold"};
+  ${({ $align }) => $align && `text-align: ${$align}`};
 `;
 
 const TableCell = styled.td`
-  font-weight: ${({ $bold }) => $bold && "bold"};
-  text-align: ${({ $align }) => $align};
+  ${({ $bold }) => $bold && "font-weight: bold"};
+  ${({ $align }) => $align && `text-align: ${$align}`};
 `;
 
 /**

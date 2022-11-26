@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import styled from "styled-components";
+import { styled } from "@compiled/react";
 
 import { Color } from "../../../styles/variables";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { styled } from "@compiled/react";
 
 import { BreakPoint, Color, Radius, Space } from "../../../styles/variables";
 

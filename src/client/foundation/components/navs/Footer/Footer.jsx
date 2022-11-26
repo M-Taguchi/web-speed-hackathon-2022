@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { styled } from "@compiled/react";
 
 import { BreakPoint, Color, FontSize, Space } from "../../../styles/variables";
 

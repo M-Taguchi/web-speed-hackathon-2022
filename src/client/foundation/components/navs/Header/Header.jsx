@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { styled } from "@compiled/react";
 
 import { useAuth, useRegister } from "../../../contexts/AuthContext";
 import { Color, FontSize, Radius, Space } from "../../../styles/variables";

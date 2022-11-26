@@ -1,6 +1,6 @@
+import { styled } from "@compiled/react";
 import { sortBy, take } from "lodash-es";
 import React from "react";
-import styled from "styled-components";
 
 import { BaseButton } from "../../../../../components/buttons/BaseButton";
 import { EntryCombination } from "../../../../../components/displays/EntryCombination";

@@ -2,7 +2,7 @@ import { difference, slice } from "lodash-es";
 import moment from "moment-timezone";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import styled from "styled-components";
+import { styled } from "@compiled/react";
 
 import { Container } from "../../components/layouts/Container";
 import { Spacer } from "../../components/layouts/Spacer";

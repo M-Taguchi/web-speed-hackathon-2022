@@ -1,6 +1,6 @@
 import { range, without } from "lodash-es";
 import React, { useCallback, useState } from "react";
-import styled from "styled-components";
+import { styled } from "@compiled/react";
 
 import { BaseButton } from "../../../../../components/buttons/BaseButton";
 import { Spacer } from "../../../../../components/layouts/Spacer";

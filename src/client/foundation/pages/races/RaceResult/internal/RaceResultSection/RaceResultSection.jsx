@@ -1,7 +1,7 @@
 import { faHandPeace } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import styled from "styled-components";
+import { styled } from "@compiled/react";
 
 import { Color, FontSize, Space } from "../../../../../styles/variables";
 
