@@ -87,7 +87,7 @@ export const apiRoute = async (fastify) => {
     races = races.map((race) => {
       return {
         ...race,
-        image: race.image.replace(".jpg", ".webp"),
+        image: race.image.replace(".jpg", "_s.webp"),
       };
     });
 
