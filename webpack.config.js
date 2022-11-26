@@ -31,29 +31,24 @@ module.exports = [
         {
           exclude: /[\\/]esm[\\/]/,
           test: /\.jsx?$/,
-          use: [
-            {
-              loader: "babel-loader",
-              options: {
-                presets: [
-                  [
-                    "@babel/preset-env",
-                    {
-                      modules: false,
-                      spec: true,
-                      targets: {
-                        node: true,
-                      },
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                [
+                  "@babel/preset-env",
+                  {
+                    modules: false,
+                    spec: true,
+                    targets: {
+                      node: true,
                     },
-                  ],
-                  "@babel/preset-react",
+                  },
                 ],
-              },
+                "@babel/preset-react",
+              ],
             },
-            {
-              loader: "@compiled/webpack-loader",
-            },
-          ],
+          },
         },
       ],
     },

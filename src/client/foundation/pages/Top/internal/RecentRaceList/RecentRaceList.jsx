@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { styled } from "@compiled/react";
+import styled from "styled-components";
 
 import { LinkButton } from "../../../../components/buttons/LinkButton";
 import { Spacer } from "../../../../components/layouts/Spacer";

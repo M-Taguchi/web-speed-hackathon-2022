@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "@compiled/react";
+import styled from "styled-components";
 
 const Image = styled.img`
   display: block;
