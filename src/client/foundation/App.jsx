@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { StyleSheetManager } from "styled-components";
 
@@ -10,12 +10,14 @@ import { GlobalStyle } from "./styles/GlobalStyle";
 export const App = () => {
   return (
     <StyleSheetManager disableCSSOMInjection>
-      <AuthContextProvider>
-        <GlobalStyle />
-        <BrowserRouter>
-          <Routes />
-        </BrowserRouter>
-      </AuthContextProvider>
+      <Suspense fallback={<></>}>
+        <AuthContextProvider>
+          <GlobalStyle />
+          <BrowserRouter>
+            <Routes />
+          </BrowserRouter>
+        </AuthContextProvider>
+      </Suspense>
     </StyleSheetManager>
   );
 };

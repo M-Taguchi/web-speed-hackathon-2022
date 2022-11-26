@@ -17,7 +17,6 @@ const DIST_PUBLIC = abs("./dist/public");
 /** @type {Array<import('webpack').Configuration>} */
 module.exports = [
   {
-    devtool: "inline-source-map",
     entry: path.join(SRC_ROOT, "client/index.jsx"),
     mode: "production",
     module: {
@@ -41,6 +40,9 @@ module.exports = [
                   {
                     modules: false,
                     spec: true,
+                    targets: {
+                      node: true,
+                    },
                   },
                 ],
                 "@babel/preset-react",
@@ -58,6 +60,7 @@ module.exports = [
       new CopyPlugin({
         patterns: [{ from: PUBLIC_ROOT, to: DIST_PUBLIC }],
       }),
+      new MomentLocalesPlugin({ localesToKeep: ["ja"] }),
     ],
     resolve: {
       extensions: [".js", ".jsx"],
@@ -83,6 +86,9 @@ module.exports = [
                   {
                     modules: "cjs",
                     spec: true,
+                    targets: {
+                      node: true,
+                    },
                   },
                 ],
                 "@babel/preset-react",
@@ -97,7 +103,6 @@ module.exports = [
       filename: "server.js",
       path: DIST_ROOT,
     },
-    plugins: [new MomentLocalesPlugin({ localesToKeep: ["ja"] })],
     resolve: {
       extensions: [".mjs", ".js", ".jsx"],
     },

@@ -66,14 +66,13 @@ export const TrimmedImage = ({ height, src, width }) => {
 
   return (
     <img
-      style={{
-        width: width,
-        aspectRatio: `${width}/${height}`,
-        objectFit: "cover",
-      }}
       alt=""
       src={src}
-      decoding="async"
+      style={{
+        aspectRatio: `${width}/${height}`,
+        objectFit: "cover",
+        width: width,
+      }}
     />
   );
 };
