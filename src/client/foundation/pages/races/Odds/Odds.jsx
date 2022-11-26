@@ -70,8 +70,8 @@ export const Odds = () => {
       <Spacer mt={Space * 2} />
       <Heading as="h1">{data ? data.name : "読み込み中…"}</Heading>
       <p>
-        開始 {data && formatTime(data.startAt)} 締切{" "}
-        {data && formatTime(data.closeAt)}
+        開始 {data ? formatTime(data.startAt) : "99:99"} 締切{" "}
+        {data ? formatTime(data.closeAt) : "99:99"}
       </p>
 
       <Spacer mt={Space * 2} />
