@@ -139,7 +139,11 @@ export const Top = () => {
 
   return (
     <Container>
-      {heroImageUrl !== null && <HeroImage url={heroImageUrl} />}
+      <HeroImage
+        url={
+          heroImageUrl !== null ? heroImageUrl : "/assets/images/skelton_l.webp"
+        }
+      />
 
       <Spacer mt={Space * 2} />
       {userData && (
