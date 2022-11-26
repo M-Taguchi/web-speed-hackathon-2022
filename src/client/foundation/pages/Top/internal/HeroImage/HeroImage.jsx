@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Image = styled.img`
+  aspect-ratio: 1024 / 735;
+  width: 100%;
   display: block;
   margin: 0 auto;
 `;
