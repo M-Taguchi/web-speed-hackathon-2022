@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const jsonFetcher = async (/** @type {string} */ url) => {
   const res = await axios.get(url, {
-    headers: { "Accept-Encoding": "gzip, deflate" },
+    headers: { "Content-Encoding": "gzip" },
     responseType: "json",
   });
   return res.data;
