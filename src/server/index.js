@@ -9,8 +9,8 @@ import { spaRoute } from "./routes/spa.js";
 import { createConnection } from "./typeorm/connection.js";
 import { initialize } from "./typeorm/initialize.js";
 
-const IS_PRODUCTION = process.env.NODE_ENV === "production";
-// const IS_PRODUCTION = true;
+// const IS_PRODUCTION = process.env.NODE_ENV === "production";
+const IS_PRODUCTION = true;
 
 const server = fastify({
   logger: IS_PRODUCTION
