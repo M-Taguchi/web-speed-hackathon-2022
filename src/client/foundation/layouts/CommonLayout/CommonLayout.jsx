@@ -9,7 +9,7 @@ export const CommonLayout = () => {
     <div>
       <Header />
 
-      <main style={{ minHeight: "100vh" }}>
+      <main style={{ minHeight: "95vh" }}>
         <Suspense fallback={<></>}>
           <Outlet />
         </Suspense>
