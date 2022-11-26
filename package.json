@@ -25,6 +25,7 @@
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
+    "@compiled/babel-plugin": "^0.16.5",
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "@types/lodash-es": "^4.14.178",
     "@types/node": "^16.11.68",
@@ -64,6 +65,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.2",
+    "@compiled/react": "^0.11.1",
+    "@compiled/webpack-loader": "^0.9.5",
+    "@fastify/compress": "^5.0.0",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
