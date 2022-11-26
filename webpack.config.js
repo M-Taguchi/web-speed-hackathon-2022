@@ -3,6 +3,7 @@ const path = require("path");
 
 const CopyPlugin = require("copy-webpack-plugin");
 const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
+const MomentTimezoneDataPlugin = require("moment-timezone-data-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 
 function abs(...args) {
@@ -61,6 +62,7 @@ module.exports = [
         patterns: [{ from: PUBLIC_ROOT, to: DIST_PUBLIC }],
       }),
       new MomentLocalesPlugin({ localesToKeep: ["ja"] }),
+      new MomentTimezoneDataPlugin({ matchZones: "Asia/Tokyo" }),
     ],
     resolve: {
       extensions: [".js", ".jsx"],
