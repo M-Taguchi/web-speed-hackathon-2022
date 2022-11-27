@@ -12,6 +12,7 @@ import { initialize } from "../typeorm/initialize.js";
  */
 export const apiRoute = async (fastify) => {
   fastify.get("/users/me", async (req, res) => {
+    res.header("Cache-Control", "no-cache, no-store, no-transform");
     const repo = (await createConnection()).getRepository(User);
 
     if (req.user != null) {
@@ -23,6 +24,7 @@ export const apiRoute = async (fastify) => {
   });
 
   fastify.post("/users/me/charge", async (req, res) => {
+    res.header("Cache-Control", "no-cache, no-store, no-transform");
     if (req.user == null) {
       throw fastify.httpErrors.unauthorized();
     }
@@ -36,7 +38,6 @@ export const apiRoute = async (fastify) => {
 
     req.user.balance += amount;
     await repo.save(req.user);
-
     res.status(204).send();
   });
 
@@ -121,6 +122,7 @@ export const apiRoute = async (fastify) => {
   });
 
   fastify.get("/races/:raceId/betting-tickets", async (req, res) => {
+    res.header("Cache-Control", "private, max-age=0");
     if (req.user == null) {
       throw fastify.httpErrors.unauthorized();
     }
@@ -143,6 +145,7 @@ export const apiRoute = async (fastify) => {
   });
 
   fastify.post("/races/:raceId/betting-tickets", async (req, res) => {
+    res.header("Cache-Control", "private, max-age=0");
     if (req.user == null) {
       throw fastify.httpErrors.unauthorized();
     }

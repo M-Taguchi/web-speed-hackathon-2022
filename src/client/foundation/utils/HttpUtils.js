@@ -3,7 +3,6 @@ import axios from "axios";
 export const jsonFetcher = async (/** @type {string} */ url) => {
   const res = await axios.get(url, {
     headers: {
-      "Cache-Control": "public, max-age=31536000",
       "Content-Encoding": "gzip",
     },
     responseType: "json",
