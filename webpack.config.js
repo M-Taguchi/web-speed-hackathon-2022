@@ -102,7 +102,7 @@ module.exports = [
     },
     name: "server",
     output: {
-      filename: "server.js",
+      filename: "index.js",
       path: DIST_ROOT,
     },
     resolve: {
